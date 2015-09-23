@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<script src="getData.js"></script>
+<link rel="stylesheet" href="style.css">
+<link href="bootstrap.min.css" rel="stylesheet">
+
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+
+    <div style="margin: auto;
+    width: 60%;
+    padding: 10px;margin: auto;
+    width: 60%;
+    padding: 10px;" >
+        <form  class="form-search">
+            <div class="input-append">
+                <input type="text" ng-model="search" class="search-query" style="width: 80%; border-radius: 30px;">
+                <button type="submit" class="btn">Search</button>
+            </div>
+            <div class="nav">
+                <li ng-animate="'animate'" ng-repeat="x in names | filter:search">
+                    <div class="panel-success well">
+                        <div class="panel-heading" style="text-transform: uppercase"> {{x.Name}}</div>
+                        <div class="panel-body">
+                            <ul><li>{{x.Name}} From {{x.Country}}</li>
+                            </ul>
+
+                        </div>
+                        </div>
+                    </div>
+                </li>
+            </form>
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+</html>
